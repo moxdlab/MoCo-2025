@@ -21,10 +21,11 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import io.moxd.mocohands_on.R
+import io.moxd.mocohands_on.Route
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun OurScaffold(onNavigate: (Int) -> Unit = {}, content: @Composable () -> Unit = {}) {
+fun OurScaffold(onNavigate: (route: Route) -> Unit = {}, content: @Composable () -> Unit = {}) {
     Scaffold(topBar = {
         TopAppBar(
             title = { Text(text = stringResource(id = R.string.app_name)) },
