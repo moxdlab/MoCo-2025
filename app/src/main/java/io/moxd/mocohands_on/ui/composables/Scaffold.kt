@@ -25,13 +25,17 @@ import io.moxd.mocohands_on.Route
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun OurScaffold(onNavigate: (route: Route) -> Unit = {}, content: @Composable () -> Unit = {}) {
+fun OurScaffold(
+    onNavigate: (route: Route) -> Unit = {},
+    fapClick: () -> Unit = {},
+    content: @Composable () -> Unit = {},
+) {
     Scaffold(topBar = {
         TopAppBar(
             title = { Text(text = stringResource(id = R.string.app_name)) },
         )
     }, floatingActionButton = {
-        FloatingActionButton(onClick = {}) {
+        FloatingActionButton(onClick = fapClick) {
             Icon(Icons.Filled.Add, contentDescription = "add")
         }
     }, bottomBar = {
