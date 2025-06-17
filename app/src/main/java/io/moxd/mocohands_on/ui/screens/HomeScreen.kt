@@ -4,8 +4,8 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import io.moxd.mocohands_on.model.Contact
 import io.moxd.mocohands_on.ui.composables.ContactCard
 import io.moxd.mocohands_on.ui.composables.OurScaffold
@@ -15,7 +15,7 @@ import io.moxd.mocohands_on.viewmodel.ContactViewModel
 
 @Composable
 fun HomeScreen(viewModel: ContactViewModel = viewModel(), onContactClick: (Int) -> Unit) {
-    val contacts by viewModel.getContacts().observeAsState(emptyList())
+    val contacts by viewModel.getContacts().collectAsStateWithLifecycle(emptyList())
     HomeScreen(contacts, onContactClick)
 }
 
