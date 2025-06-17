@@ -46,6 +46,10 @@ dependencies {
     implementation(libs.firebase.database)
     implementation(libs.firebase.common.ktx)
     implementation (libs.kotlinx.coroutines.android)
+    implementation(libs.firebase.messaging)
+
+    implementation(libs.ktor.client.core)
+    implementation(libs.ktor.client.android)
 
 
     implementation(libs.kotlinx.serialization.json)
